@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f8b056f14c3e438aea4eb1c64123f, type: 3}
+  m_Name: Question 13
+  m_EditorClassIdentifier: 
+  question: "\u201CTia l\u1EEDa \u0111i\u1EC7n\u201D trong phim khoa h\u1ECDc vi\u1EC5n
+    t\u01B0\u1EDFng th\u01B0\u1EDDng \u0111\u01B0\u1EE3c l\u1EA5y c\u1EA3m h\u1EE9ng
+    t\u1EEB ph\xE1t minh n\xE0o c\u1EE7a Tesla?\n"
+  answer:
+  - "A. M\xE1y ph\xE1t \u0111i\u1EC7n "
+  - "B. B\xF3ng \u0111\xE8n "
+  - "C. Cu\u1ED9n Tesla"
+  - "D. Pin h\xF3a h\u1ECDc  "
+  correctAnswerIndex: 3

@@ -1186,6 +1186,15 @@ namespace PlayFab.EconomyModels
         /// </summary>
         public List<CatalogAlternateId> AlternateIds;
         /// <summary>
+        /// An opaque token used to retrieve the next page of items created by the caller, if any are available. Should be null on
+        /// initial request.
+        /// </summary>
+        public string ContinuationToken;
+        /// <summary>
+        /// Number of items to retrieve. This value is optional. Default value is 10.
+        /// </summary>
+        public int? Count;
+        /// <summary>
         /// The optional custom tags associated with the request (e.g. build number, external trace identifiers, etc.).
         /// </summary>
         public Dictionary<string,string> CustomTags;
@@ -2907,6 +2916,10 @@ namespace PlayFab.EconomyModels
         /// </summary>
         public string ApiName;
         /// <summary>
+        /// Additional details about the transaction. Null if it was not a clawback operation.
+        /// </summary>
+        public TransactionClawbackDetails ClawbackDetails;
+        /// <summary>
         /// The type of item that the the operation occurred on.
         /// </summary>
         public string ItemType;
@@ -2938,6 +2951,15 @@ namespace PlayFab.EconomyModels
         /// Additional details about the transaction. Null if it was not a transfer operation.
         /// </summary>
         public TransactionTransferDetails TransferDetails;
+    }
+
+    [Serializable]
+    public class TransactionClawbackDetails : PlayFabBaseModel
+    {
+        /// <summary>
+        /// The id of the clawed back operation.
+        /// </summary>
+        public string TransactionIdClawedback;
     }
 
     [Serializable]

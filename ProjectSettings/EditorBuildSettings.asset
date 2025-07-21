@@ -7,11 +7,8 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Login.unity
-    guid: 51a74241bda344b489db7a560213aef1
+    guid: 5cebd973f7a9c0041ac8589e9a808676
   - enabled: 1
-    path: Assets/Scenes/scenlogin.unity
-    guid: 1781039d59721734da5bc9437e50164f
-  - enabled: 1
-    path: Assets/Scenes/QuizGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Quiz.unity
+    guid: f52ac7e809c77164591d6ebe1fb92d2a
   m_configObjects: {}

@@ -1,19 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer Instance;
     [SerializeField] float timeToCompleQuestion = 30f;
-    [SerializeField] float timeToShowCorrectAnswer = 10f;
+    public float timeToShowCorrectAnswer = 10f;
     public bool loadNextQuestion = false;
     public bool isAnsweringQuestion = false;
     float timerValue;
     public float fillFraction;
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     private void Update()
     {
-        UpdateTimer();
-            
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            UpdateTimer();
+        }
     }
     public void CancelTimer()
     {
@@ -32,6 +46,8 @@ public class Timer : MonoBehaviour
             {
                 isAnsweringQuestion = false;
                 timerValue = timeToShowCorrectAnswer;
+                fillFraction = 1;
+
             }
         }
         else
@@ -47,6 +63,12 @@ public class Timer : MonoBehaviour
                 loadNextQuestion = true;
             }
         }
-        Debug.Log(isAnsweringQuestion + ": " + timerValue + " = " + fillFraction);
+    }
+    public void ResetTimer()
+    {
+        timerValue = timeToCompleQuestion;
+        fillFraction = 1f;
+        isAnsweringQuestion = true;
+        loadNextQuestion = false;
     }
 }
